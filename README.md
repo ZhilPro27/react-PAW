@@ -1,70 +1,125 @@
-# Getting Started with Create React App
+Aplikasi Katalog Online & Sistem Kasir (POS)
+Selamat datang di proyek Aplikasi Katalog Online & Sistem Kasir (POS). Ini adalah aplikasi web full-stack yang dibangun dengan Node.js (Express.js) untuk backend dan React (MUI) untuk frontend.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Deskripsi Proyek
+Aplikasi ini berfungsi sebagai platform untuk menampilkan katalog produk kepada publik, sekaligus menyediakan dasbor admin yang kuat untuk mengelola produk, pesanan, dan melihat laporan penjualan. Proyek ini mencakup alur autentikasi lengkap untuk pengguna dan admin, sistem keranjang belanja, hingga pencatatan transaksi dan pembuatan laporan PDF.
 
-## Available Scripts
+Fitur Utama
+Fitur Publik & Pengguna (User)
+👤 Registrasi & Login: Pengguna dapat membuat akun dan login ke sistem.
 
-In the project directory, you can run:
+📚 Katalog Produk: Melihat daftar semua produk yang tersedia beserta gambar, harga, dan stok.
 
-### `npm start`
+🛒 Keranjang Belanja: Menambahkan produk ke keranjang belanja yang persisten.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+✅ Checkout: Mengajukan pesanan dari item di keranjang untuk disetujui oleh admin.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+📄 Halaman Profil: Melihat detail akun pengguna yang sedang login.
 
-### `npm test`
+Fitur Admin
+🔐 Login Aman: Halaman login terpisah untuk admin.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+📊 Dashboard Interaktif: Menampilkan ringkasan statistik penjualan seperti total pemasukan, jumlah transaksi, dan barang terlaris.
 
-### `npm run build`
+📦 Manajemen Produk (CRUD): Admin dapat menambah, melihat, mengedit (termasuk gambar), dan menghapus produk.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+🛒 Manajemen Pesanan: Melihat daftar pesanan yang masuk dari pengguna dan memiliki opsi untuk Menerima atau Menolak pesanan.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+🏪 Sistem Kasir (POS): Antarmuka kasir untuk melakukan transaksi penjualan langsung.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+📄 Ekspor Laporan PDF: Kemampuan untuk mengunduh laporan penjualan lengkap dalam format PDF.
 
-### `npm run eject`
+🛡️ Catatan Login/Logout: Mencatat semua aktivitas autentikasi untuk keperluan audit.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Teknologi yang Digunakan
+Backend:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Node.js & Express.js
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+MySQL (mysql2/promise)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+JSON Web Tokens (JWT) untuk autentikasi
 
-## Learn More
+Bcrypt.js untuk hashing password
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Multer untuk upload file/gambar
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+PDFMake untuk pembuatan laporan PDF
 
-### Code Splitting
+Frontend:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+React.js
 
-### Analyzing the Bundle Size
+React Router untuk navigasi
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Material-UI (MUI) untuk komponen UI
 
-### Making a Progressive Web App
+Axios untuk permintaan API
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+React Context untuk state management global (Auth & Cart)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Instalasi
+Prasyarat
+Node.js (v18 atau lebih baru)
 
-### Deployment
+npm (biasanya terinstal bersama Node.js)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Server Database MySQL
 
-### `npm run build` fails to minify
+Backend Setup
+Clone repositori (jika ada) atau navigasi ke folder backend.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Buka terminal di dalam folder backend dan jalankan:
+
+Bash
+
+npm install
+Buat database baru di MySQL Anda dengan nama yang Anda inginkan (misalnya, katalog_db).
+
+Konfigurasi Environment:
+
+Buat file baru bernama .env di dalam folder backend.
+
+Salin isi dari bagian Environment Variables di bawah ke dalam file .env Anda.
+
+Sesuaikan nilainya dengan konfigurasi database Anda.
+
+Jalankan server backend:
+
+Bash
+
+npm start
+Server akan berjalan di port yang Anda tentukan di .env (misalnya, 5000).
+
+Frontend Setup
+Buka terminal baru dan navigasi ke folder frontend.
+
+Jalankan perintah untuk menginstal semua dependensi:
+
+Bash
+
+npm install
+Jalankan aplikasi React:
+
+Bash
+
+npm start
+Aplikasi akan terbuka di browser Anda, biasanya di http://localhost:3000.
+
+Konfigurasi Environment Variables
+Buat file .env di direktori backend dan isi dengan format berikut. Ganti nilainya sesuai dengan pengaturan lokal Anda.
+
+Cuplikan kode
+
+# Konfigurasi Database
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=password_database_anda
+DB_NAME=katalog_db
+
+# Konfigurasi Server
+PORT=5000
+
+# Konfigurasi Keamanan
+JWT_SECRET=kunci_rahasia_jwt_anda_yang_sangat_panjang_dan_sulit_ditebak
