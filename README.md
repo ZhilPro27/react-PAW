@@ -1,125 +1,95 @@
-Aplikasi Katalog Online & Sistem Kasir (POS)
-Selamat datang di proyek Aplikasi Katalog Online & Sistem Kasir (POS). Ini adalah aplikasi web full-stack yang dibangun dengan Node.js (Express.js) untuk backend dan React (MUI) untuk frontend.
+Katalog Online & Sistem Kasir (POS) 🏪
+Selamat datang di proyek Katalog Online & Sistem Kasir (POS). Ini adalah aplikasi web full-stack yang dibangun dengan Node.js untuk backend dan React untuk frontend, dilengkapi dengan antarmuka modern menggunakan Material-UI (MUI).
 
-Deskripsi Proyek
-Aplikasi ini berfungsi sebagai platform untuk menampilkan katalog produk kepada publik, sekaligus menyediakan dasbor admin yang kuat untuk mengelola produk, pesanan, dan melihat laporan penjualan. Proyek ini mencakup alur autentikasi lengkap untuk pengguna dan admin, sistem keranjang belanja, hingga pencatatan transaksi dan pembuatan laporan PDF.
+Aplikasi ini berfungsi sebagai platform untuk menampilkan katalog produk kepada publik, sekaligus menyediakan dasbor admin yang kuat untuk mengelola produk, pesanan, dan melihat laporan penjualan.
 
-Fitur Utama
-Fitur Publik & Pengguna (User)
-👤 Registrasi & Login: Pengguna dapat membuat akun dan login ke sistem.
+Fitur Utama ✨
+Sisi Pengguna (User)
+👤 Autentikasi: Registrasi dan login akun.
 
-📚 Katalog Produk: Melihat daftar semua produk yang tersedia beserta gambar, harga, dan stok.
+📚 Katalog Produk: Melihat daftar produk lengkap dengan gambar, harga, dan stok.
 
-🛒 Keranjang Belanja: Menambahkan produk ke keranjang belanja yang persisten.
+🛒 Keranjang Belanja: Menambah produk ke keranjang belanja.
 
-✅ Checkout: Mengajukan pesanan dari item di keranjang untuk disetujui oleh admin.
+✅ Checkout: Mengajukan pesanan untuk disetujui oleh admin.
 
-📄 Halaman Profil: Melihat detail akun pengguna yang sedang login.
+📄 Profil Pengguna: Melihat detail akun.
 
-Fitur Admin
-🔐 Login Aman: Halaman login terpisah untuk admin.
+Sisi Admin
+🔐 Login Aman: Halaman login khusus untuk admin.
 
-📊 Dashboard Interaktif: Menampilkan ringkasan statistik penjualan seperti total pemasukan, jumlah transaksi, dan barang terlaris.
+📊 Dasbor Interaktif: Memantau ringkasan penjualan, barang terlaris, dan jumlah transaksi.
 
-📦 Manajemen Produk (CRUD): Admin dapat menambah, melihat, mengedit (termasuk gambar), dan menghapus produk.
+📦 Manajemen Produk (CRUD): Menambah, melihat, mengedit (termasuk gambar), dan menghapus produk.
 
-🛒 Manajemen Pesanan: Melihat daftar pesanan yang masuk dari pengguna dan memiliki opsi untuk Menerima atau Menolak pesanan.
+🛒 Manajemen Pesanan: Menerima atau menolak pesanan yang masuk dari pengguna.
 
-🏪 Sistem Kasir (POS): Antarmuka kasir untuk melakukan transaksi penjualan langsung.
+🏪 Sistem Kasir (POS): Antarmuka kasir untuk transaksi penjualan langsung.
 
-📄 Ekspor Laporan PDF: Kemampuan untuk mengunduh laporan penjualan lengkap dalam format PDF.
+📄 Ekspor Laporan PDF: Mengunduh laporan penjualan lengkap dalam format PDF.
 
-🛡️ Catatan Login/Logout: Mencatat semua aktivitas autentikasi untuk keperluan audit.
+🛡️ Log Aktivitas: Mencatat semua aktivitas login dan logout untuk audit keamanan.
 
-Teknologi yang Digunakan
-Backend:
+Tumpukan Teknologi 🥞
+Peran	Teknologi
+Backend	Node.js, Express.js, MySQL (mysql2), JWT, Bcrypt, Multer, PDFMake
+Frontend	React, React Router, Material-UI (MUI), Axios, React Context
 
-Node.js & Express.js
-
-MySQL (mysql2/promise)
-
-JSON Web Tokens (JWT) untuk autentikasi
-
-Bcrypt.js untuk hashing password
-
-Multer untuk upload file/gambar
-
-PDFMake untuk pembuatan laporan PDF
-
-Frontend:
-
-React.js
-
-React Router untuk navigasi
-
-Material-UI (MUI) untuk komponen UI
-
-Axios untuk permintaan API
-
-React Context untuk state management global (Auth & Cart)
-
-
-Instalasi
+Ekspor ke Spreadsheet
+Instalasi & Konfigurasi 🚀
 Prasyarat
 Node.js (v18 atau lebih baru)
 
-npm (biasanya terinstal bersama Node.js)
+NPM (terinstal bersama Node.js)
 
-Server Database MySQL
+Server MySQL
 
-Backend Setup
-Clone repositori (jika ada) atau navigasi ke folder backend.
-
-Buka terminal di dalam folder backend dan jalankan:
-
+1. Backend
 Bash
 
+# Masuk ke folder backend
+cd backend
+
+# Instal semua dependensi
 npm install
-Buat database baru di MySQL Anda dengan nama yang Anda inginkan (misalnya, katalog_db).
 
-Konfigurasi Environment:
+# Buat database baru di MySQL (misal: katalog_db)
 
-Buat file baru bernama .env di dalam folder backend.
+# Salin file .env.example menjadi .env
+cp .env.example .env
 
-Salin isi dari bagian Environment Variables di bawah ke dalam file .env Anda.
+# Sesuaikan isi file .env dengan konfigurasi database Anda
 
-Sesuaikan nilainya dengan konfigurasi database Anda.
-
-Jalankan server backend:
-
-Bash
-
+# Jalankan server
 npm start
-Server akan berjalan di port yang Anda tentukan di .env (misalnya, 5000).
+Server backend akan berjalan di http://localhost:5000 (atau sesuai port di .env).
 
-Frontend Setup
-Buka terminal baru dan navigasi ke folder frontend.
-
-Jalankan perintah untuk menginstal semua dependensi:
-
+2. Frontend
 Bash
 
+# Buka terminal baru, masuk ke folder frontend
+cd frontend
+
+# Instal semua dependensi
 npm install
-Jalankan aplikasi React:
 
-Bash
-
+# Jalankan aplikasi React
 npm start
-Aplikasi akan terbuka di browser Anda, biasanya di http://localhost:3000.
+Aplikasi frontend akan terbuka di http://localhost:3000.
 
-Konfigurasi Environment Variables
-Buat file .env di direktori backend dan isi dengan format berikut. Ganti nilainya sesuai dengan pengaturan lokal Anda.
+Variabel Lingkungan (.env)
+Buat file .env di dalam direktori backend dan isi sesuai contoh di bawah ini.
 
 Cuplikan kode
 
 # Konfigurasi Database
 DB_HOST=localhost
 DB_USER=root
-DB_PASSWORD=password_database_anda
+DB_PASSWORD=password_anda
 DB_NAME=katalog_db
 
 # Konfigurasi Server
 PORT=5000
 
-# Konfigurasi Keamanan
-JWT_SECRET=kunci_rahasia_jwt_anda_yang_sangat_panjang_dan_sulit_ditebak
+# Konfigurasi Keamanan (ganti dengan kunci rahasia Anda sendiri)
+JWT_SECRET=kunci_rahasia_yang_sangat_aman_dan_panjang
