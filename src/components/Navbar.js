@@ -40,7 +40,7 @@ const Navbar = ({ auth, onLogout }) => {
             <Button color="inherit" component={Link} to="/admin/products">Kelola Produk</Button>
             <Button color="inherit" component={Link} to="/admin/pesanan">Pesanan</Button>
             <Button color="inherit" component={Link} to="/admin/kasir">Kasir</Button>
-            <Button color="inherit" component={Link} to="/admin/logs">Log</Button>
+            <Button color="inherit" component={Link} to="/admin/log">Log</Button>
             <Button color="inherit" onClick={handleLogout}>Logout</Button>
           </>
         ) : (
